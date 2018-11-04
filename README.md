@@ -1,2 +1,2 @@
-# brandonlind
-The home for the brandonlind.com website.
+# Brandon Lind
+The source of the personal brand for Brandon Lind.
