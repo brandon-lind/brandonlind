@@ -1,0 +1,100 @@
+BRANDON LIND
+Building and enabling dependable technology teams
+
+SKILLS
+--------------------
+Architecture, Mentoring, Servant Leadership, Technologist, NodeJS, Angular, React, Java, .NET, AWS, Business Development, Agile
+
+WORK EXPERIENCE
+--------------------
+Director of Engineering
+Inventive Group, Inc
+01/2018-Present
+Austin, TX
+An expert led consulting company and engineering bootcamp.
+- Leading several high-performance development teams on a variety of platforms, technologies, and timelines
+- Coordinating and conducting development ceremonies, coaching/mentoring, project priorities, and technology decisions
+- Participating in business analysis, sales, project assessments and discovery of new business opportunities
+
+Manager, Software Development BI & Analytics
+TriNet Group, Inc
+04/2017-12/2017
+TriNet is a professional employer organization (PEO) that provides small and midsize businesses with full-service HR solutions.
+Austin, TX
+- Built, organized and lead two development teams to build the next generation TriNet reporting solutions
+- Frequently presented updates of the projects status to the senior management and the executive teams
+- Collaborated with the product owner, PMO, QA and release teams to ensure smooth progression through the SDLC within the enterprise
+- Architected a high-performance, scalable, web-based reporting application using Angular, Java microservices, Apache, Redis, MongoDB, RabbitMQ and Docker
+
+Application Architect
+General Motors
+04/2015-04/2017
+Application architect for the global Owner Center application; a high volume, public-facing eCommerce, vehicle management and educational application.
+Austin, TX
+- Architect and developer for the Info3 project which integrated the in-vehicle infotainment system with the Owner Center application
+- Architect for the migration of the PCI compliant OnStar shopping experience into the Owner Center application
+- Architected, developed and trained UI developers on an AngularJS framework/templating system to support better modularity, localization, testability and multi-tenancy
+
+Lead Senior Software Engineer
+Trade Technologies, Inc
+03/2013-04/2015
+Provides software and services for Exporters, Forwarders and Asia-Direct Importers and Vendors.
+Austin, TX
+- Overall development lead responsible for code standards, testing patterns, and overall software architecture
+- Lead a team to architect and develop a number of feature enhancements for the platform including a business gateway + workflow engine for trade-related documents, a custom reporting solution, and overall UI/UX experience
+
+Senior Software Dev Engineer
+Dell, Inc
+03/2012-03/2013
+Incubator, R&D and social commerce products offered under the "Marketvine by Dell" team.
+Austin, TX
+- Developed a host of social commerce applications utilizing a number of technologies including .NET, Ruby, Java, Node, Backbone, Knockout, and many more
+- Lead a "lean canvas" exercise, conducting over 30 interviews to determine the viability of a product
+
+Senior Integration Engineer
+Newgistics, Inc
+04/2011-03/2012
+Leading provider for e-commerce services in order fulfillment, parcel delivery and returns management for top retailers and brands
+Austin, TX
+- Lead integration efforts for top-tier brands including Walmart, Amazon, Lands End, Gap and many others utilizing BizTalk, custom C# assemblies, WCF web services and messaging technologies
+- Assisted in technical sales, application development and account management activities
+
+Senior IT Developer
+Hewlett-Packard
+01/2009-04/2011
+Austin, TX
+- Technical team lead for the SharePoint applications hosted by the Enterprise Services division
+- Technical team lead for the custom .NET master data solution in the Finance and Administration IT division
+
+Partner & Developer
+Salvagno Partners at UBS Wealth Management
+12/1999-12/2008
+Provided an early SaaS platform to assist venture capital and high-net-worth individuals manage private assets.
+Austin, TX
+- Co-authored the business plan, participated in technical sales and lead a development team to bring a revolutionary private asset management product to market
+
+
+EDUCATION
+--------------------
+BS, Management Information Systems
+California State University, Chico
+1998 - Chico, CA
+
+
+ORGANIZATIONS
+--------------------
+Delta Sigma Pi, Epsilon Theta Chapter (1999)
+
+
+VOLUNTEER EXPERIENCE
+--------------------
+Committee Chair - Pinewood Derby
+Cub Scouts of America
+09/2013 - Present
+- Coordinated efforts to host the annual Pinewood Derby for Pack 172, our largest event of the year
+
+
+Vice President
+Twin Creeks HOA
+03/2013 - 03/2016
+- Lead initiatives and participated in board meetings related to community topics

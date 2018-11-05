@@ -1,0 +1,25 @@
+{
+  "name": "brandonlind",
+  "version": "1.0.0",
+  "description": "The personal site for Brandon Lind.",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "aws s3 sync src/client/ s3://brandonlind.com --delete",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E26XQZOB3CPZF2 --paths '/*' && aws cloudfront create-invalidation --distribution-id EI6UGRZUNTCP2 --paths '/*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ripvanbl/brandonlind.git"
+  },
+  "keywords": [
+    "brandon",
+    "lind"
+  ],
+  "author": "Brandon Lind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ripvanbl/brandonlind/issues"
+  },
+  "homepage": "https://github.com/ripvanbl/brandonlind#readme"
+}
