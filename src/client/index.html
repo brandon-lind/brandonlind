@@ -130,29 +130,10 @@
 				
 				<!-- Contact Form -->
 					<section class="wrapper style1 align-left">
-						<div id="contactme" class="inner medium">
-							<h2>Get in touch</h2>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field half">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
-									</div>
-								</div>
-								<ul class="actions special">
-									<li><input disabled="disabled" type="submit" name="submit" id="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-
-						</div>
+						<div class="inner medium">
+            				<h2>Get in touch</h2>
+            				<div id="contactme"></div>
+        				</div>
 					</section>
 
 				<!-- Footer -->
@@ -176,6 +157,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="//unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+			<script src="//unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+			<script src="//unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+			<script src="assets/js/contact.js" type="text/babel"></script>
 	</body>
 </html>
