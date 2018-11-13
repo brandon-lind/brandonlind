@@ -1,0 +1,30 @@
+service: brandonlind
+frameworkVersion: "=1.32.0"
+
+plugins:
+  - serverless-webpack # Use the serverless-webpack plugin to transpile ES6
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+package:
+  include:
+    - src/svc/**
+  exclude:
+    - src/client/**
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+functions:
+  contactme:
+    handler: src/svc/contact.main
+    events:
+      - http:
+          path: api/contact
+          method: get
+          cors: true
