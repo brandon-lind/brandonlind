@@ -2,12 +2,22 @@ service: brandonlind
 frameworkVersion: "=1.32.0"
 
 plugins:
+  - serverless-domain-manager
   - serverless-webpack # Use the serverless-webpack plugin to transpile ES6
   - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs8.10
+  timeout: 30
+  memorySize: 128
+  stage: ${opt:stage, 'default'}
+  environment: ${file(env.yml):${self:provider.stage}, file(env.yml):default}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - SES:SendEmail
+      Resource: "*"
 
 package:
   include:
@@ -16,6 +26,11 @@ package:
     - src/client/**
 
 custom:
+  customDomain:
+    domainName: 'api.brandonlind.com'
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
@@ -25,6 +40,6 @@ functions:
     handler: src/svc/contact.main
     events:
       - http:
-          path: api/contact
-          method: get
+          path: v1/contact
+          method: post
           cors: true

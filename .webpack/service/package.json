@@ -1,0 +1,10 @@
+{
+  "name": "brandonlind",
+  "version": "1.0.0",
+  "description": "Packaged externals for brandonlind",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk": "2.353.0"
+  }
+}
