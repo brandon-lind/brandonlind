@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "The personal site for Brandon Lind.",
   "main": "src/index.js",
-  "scripts": {
-    "deploy": "aws s3 sync src/client/ s3://brandonlind.com --delete",
-    "postdeploy": "aws cloudfront create-invalidation --distribution-id E26XQZOB3CPZF2 --paths '/*' && aws cloudfront create-invalidation --distribution-id EI6UGRZUNTCP2 --paths '/*'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ripvanbl/brandonlind.git"
@@ -21,5 +16,41 @@
   "bugs": {
     "url": "https://github.com/ripvanbl/brandonlind/issues"
   },
-  "homepage": "https://github.com/ripvanbl/brandonlind#readme"
+  "homepage": "https://github.com/ripvanbl/brandonlind#readme",
+  "scripts": {
+    "deploy": "concurrently \"npm run deploy-web\" \"npm run deploy-svc\"",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E1MI155ST2NVAN --paths '/*' && aws cloudfront create-invalidation --distribution-id E13HNQRQ7XVMM0 --paths '/*'",
+    "deploy-web": "aws s3 sync src/client/ s3://brandonlind.com --delete",
+    "deploy-svc": "sls deploy --stage prod",
+    "rm-svc": "sls remove",
+    "lint": "eslint ./src/svc --fix",
+    "start": "sls offline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.4",
+    "babel-plugin-source-map-support": "2.0.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-stage-3": "6.24.1",
+    "concurrently": "4.1.0",
+    "eslint": "5.9.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "serverless": "1.32.0",
+    "serverless-domain-manager": "2.6.6",
+    "serverless-offline": "3.31.2",
+    "serverless-webpack": "5.2.0",
+    "source-map": "0.7.3",
+    "webpack": "4.25.1",
+    "webpack-node-externals": "1.7.2"
+  },
+  "dependencies": {
+    "aws-sdk": "2.353.0",
+    "babel-runtime": "6.26.0",
+    "source-map-support": "0.5.9"
+  }
 }

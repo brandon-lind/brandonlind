@@ -51,11 +51,17 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
-.yarn-integrity
+# node related
+node_modules/
+npm-debug.log
 
 # dotenv environment variables file
 .env
+env.yml
 
-# next.js build output
-.next
+# IDE related
+.c9
+.vscode
+
+# Serverless directories
+.serverless
