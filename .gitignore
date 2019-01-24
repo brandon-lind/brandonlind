@@ -65,3 +65,6 @@ env.yml
 
 # Serverless directories
 .serverless
+
+# OS related
+.DS_Store
