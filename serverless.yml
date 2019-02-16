@@ -27,7 +27,7 @@ package:
 
 custom:
   customDomain:
-    domainName: 'api.brandonlind.com'
+    domainName: ${self:custom.environment.apiDomainName}
     basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true
