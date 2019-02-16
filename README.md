@@ -34,13 +34,18 @@ This project assumes at least node version 8.10 is installed and configured on y
 
 - Make a copy of the env.default.yml named env.yml
   - Replace the blank values in env.yml with real values for all of the environments you are targeting
-- Create a S3 website buckets for both the bare domain and the www variant
+- Create S3 website buckets for both the bare domain and the www variant
   - Set the www bucket to redirect to the bare domain
 - Create Cloudfront distributions for both the bare and the www websites 
 - Install the project dependencies with `npm i`
 
-## Deployment
+## Run & Deploy
 
-Once setup is complete, you can either deploy this project from your local machine, or use a CI/CD tool such as CircleCI, TravisCI, Semaphore, etc.
+Once setup is complete, you can either run this project locally, or deploy it to a hosted environment.
 
-- `npm run deploy`
+- To run the entire project locally: `npm start`
+  - To run just the website: `npm run start-web`
+  - To run just the API service: `npm run start-svc`
+- To deploy the entire project to production: `npm run deploy`
+  - To deploy just the website: `npm run deploy-web`
+  - To deploy just the API service: `npm run deploy-svc`
