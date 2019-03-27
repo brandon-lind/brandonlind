@@ -1,93 +1,179 @@
 (function(document) {
     /* global React */
     /* global ReactDOM */
-    /* global axios */
-    
-    class ContactForm extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = { isSubmitting: false, message: '' };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.nameInput = React.createRef();
-        this.emailInput = React.createRef();
-        this.messageInput = React.createRef();
-      }
-      
-      handleSubmit(event) {
-        event.preventDefault();
-        this.setState({ submitting: true });
-        
-        const name = this.nameInput.current.value;
-        const email = this.emailInput.current.value;
-        const message = this.messageInput.current.value;
-        
-        if (!name || !email || !message) {
-          this.setState({
-            message: 'Name, email, and a message are all required to be filled in.',
-            isSubmitting: false
-          });
-        
-        return;
-        }
-        
-        const data = { name, email, message };
-        const that = this;
-        
-        this.setState({ isSubmitting: true, message: '' });
-        
-        if(location.search && location.search.match(/\?test/).length) {
-          that.setState({ isSubmitting: false, message: `Thank you for your message.` });
-          that.resetForm();
-          return;
-        }
 
-        axios.post('//api.brandonlind.com/v1/contact', data)
-          .then(function (response) {
-            console.log(response);
-            that.setState({ isSubmitting: false, message: `Thank you for your message.` });
-            that.resetForm();
-          })
-          .catch(function (error) {
-            console.log(error);
-            that.setState({ isSubmitting: false, message: `Your message could not be sent for some reason.` });
-          });
-      }
-
-      resetForm() {
-        this.nameInput.current.value = '';
-        this.emailInput.current.value = '';
-        this.messageInput.current.value = '';
-      }
-    
-      render() {
-        return (
-          <form onSubmit={this.handleSubmit}>
-            <p><strong>{this.state.message}</strong></p>
-            <div class="fields">
-              <div class="field half">
-                <label for="name">Your Name</label>
-                <input type="text" required maxlength="100" ref={this.nameInput} />
-              </div>
-              <div class="field half">
-                <label for="email">Your Email</label>
-                <input type="email" required maxlength="100" ref={this.emailInput} />
-              </div>
-              <div class="field">
-                <label for="message">Your Message to Me</label>
-                <textarea rows="6" required maxlength="1000" ref={this.messageInput}></textarea>
-              </div>
-            </div>
-            <ul class="actions special stacked">
-              <li><button type="submit" disabled={this.state.isSubmitting}>Send Message</button></li>
-              <li><strong>{this.state.message}</strong></li>
-            </ul>
-          </form>
-        );
-      }
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+  class ContactForm extends React.Component {
+    constructor(props) {
+      super(props);
+  
+      this.state = {
+        name: '',
+        email: '',
+        message: '',
+        showSuccess: false,
+        showError: false,
+      };
     }
-    
-    ReactDOM.render(
-      <ContactForm />,
-      document.getElementById('contactme-component')
-    );
-})(document);
+  
+    handleInputChange = event => {
+      const target = event.target;
+      const value = target.value;
+      const name = target.name;
+      this.setState({
+        [name]: value,
+      });
+    };
+  
+    handleReset = event => {
+      event.preventDefault();
+  
+      this.setState({
+        name: '',
+        email: '',
+        message: '',
+        showSuccess: false,
+        showError: false,
+      });
+    };
+  
+    handleSubmit = event => {
+      event.preventDefault();
+  
+      this.setState({
+        showSuccess: false,
+        showError: false,
+      });
+  
+      fetch('/?no-cache=1', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contactme', ...this.state }),
+      })
+        .then(() => { this.handleSuccess(); })
+        .catch(() => {
+          this.setState({
+            name: '',
+            email: '',
+            message: '',
+            showSuccess: false,
+            showError: true,
+          });
+        });
+    };
+  
+    handleSuccess = () => {
+      this.setState({
+        name: '',
+        email: '',
+        message: '',
+        showSuccess: true,
+        showError: false,
+      });
+  
+      setTimeout(() => {
+        if(this.props.onContactSubmit) {
+          this.props.onContactSubmit();
+        } else {
+          this.setState({
+            showSuccess: false,
+            showError: false,
+          });
+        }
+      }, 3500);
+    };
+  
+    render() {
+      return (
+        <section>
+        <form
+          onSubmit={this.handleSubmit}
+          name="contactme"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          style={
+            this.state.showSuccess ? { display: 'none' } : { display: 'block' }
+          }
+        >
+          <input type="hidden" name="form-name" value="contactme" />
+          <div className="fields">
+            <div className="field half">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                maxLength="256"
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                required
+              />
+            </div>
+            <div className="field half">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                maxLength="256"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                required
+              />
+            </div>
+            <div className="field">
+              <label htmlFor="message">Your Message to Me</label>
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                maxLength="1000"
+                value={this.state.message}
+                onChange={this.handleInputChange}
+                required
+              />
+            </div>
+            <div className="field" style={{ display: 'none' }}>
+              <label htmlFor="bot-field">Don't fill this out if you're human</label>
+              <input type="text" name="bot-field" id="bot-field" />
+            </div>
+          </div>
+          <ul className="actions">
+            <li>
+              <input type="submit" value="Send Message" className="special" />
+            </li>
+            <li>
+              <input type="reset" value="Reset" onClick={this.handleReset} />
+            </li>
+          </ul>
+          <p
+            className="strong"
+            style={
+              this.state.showError ? { display: 'block' } : { display: 'none' }
+            }
+          >
+            Hmm, there was an issue sending the message. Would you be able to try
+            again?
+          </p>
+        </form>
+        <div 
+          style={
+            this.state.showSuccess ? { display: 'block' } : { display: 'none' }
+          }>
+          <h3>Thank you for reaching out.</h3>
+          <p>I'll get back with you shortly.</p>
+        </div>
+        </section>
+      );
+    }
+  }
+  
+  ReactDOM.render(
+    <ContactForm />,
+    document.getElementById('contactme-component')
+  );
+}(document));
