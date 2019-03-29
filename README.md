@@ -6,6 +6,7 @@ I've generalized this README so that I can repurpose these instructions on multi
 Technologies include:
 
 - React 16.x
+- GastbyJS 2
 
 ## Prerequisites
 

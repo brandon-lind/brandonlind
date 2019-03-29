@@ -66,5 +66,9 @@ env.yml
 # Serverless directories
 .serverless
 
+# GatsbyJS
+.cache
+/public
+
 # OS related
 .DS_Store
