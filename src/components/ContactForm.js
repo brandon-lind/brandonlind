@@ -141,15 +141,15 @@ class ContactForm extends React.Component {
               <input type="text" name="bot-field" id="bot-field" />
             </div>
           </div>
+          <ul className="actions">
+            <li>
+              <input type="submit" value="Send Message" className="special" />
+            </li>
+            <li>
+              <input type="reset" value="Reset" onClick={this.handleReset} />
+            </li>
+          </ul>
         </form>
-        <ul className="actions">
-          <li>
-            <input type="submit" value="Send Message" className="special" />
-          </li>
-          <li>
-            <input type="reset" value="Reset" onClick={this.handleReset} />
-          </li>
-        </ul>
         <p
           className="strong"
           style={
