@@ -9,7 +9,6 @@ import ContactForm from '../components/ContactForm';
 import recMarissaLimsiacoImg from '../assets/images/rec_marissa_limsiaco.png';
 import recGirishKapoorImg from '../assets/images/rec_girish_kapoor.png';
 import recHieuHoImg from '../assets/images/rec_hieu_ho.png';
-import resumePDF from '../assets/images/Brandon_Lind_Resume.pdf';
 
 import thumb01 from '../assets/images/thumbs/01.jpg';
 import thumb02 from '../assets/images/thumbs/02.jpg';
@@ -136,7 +135,7 @@ class HomeIndex extends React.Component {
               <li><a href="https://www.linkedin.com/in/brandon-lind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-linkedin" title="Connect with me on LinkedIn"><span className="label">LinkedIn</span></a></li>
               <li><a href="#contactme" className="icon style2 fa-envelope-o smooth-scroll" title="Contact me"><span className="label">Contact me</span></a></li>
               <li><a href="https://github.com/ripvanbl/brandonlind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-github" title="View my Github account"><span className="label">Github</span></a></li>
-              <li><a href={resumePDF} target="_blank" rel="noopener noreferrer" className="icon style2 fa-file-pdf-o" title="View my resume in PDF format"><span className="label">View my resume in PDF format</span></a></li>
+              <li><a href="https://s3.amazonaws.com/brandonlind.com/resume/Brandon+Lind+Resume.pdf" target="_blank" rel="noopener noreferrer" className="icon style2 fa-file-pdf-o" title="View my resume in PDF format"><span className="label">View my resume in PDF format</span></a></li>
             </ul>
             <hr />
             <blockquote>&ldquo;...He is hands down one of the best technology leaders I have had the pleasure of working with...&rdquo;<br /><img src={recMarissaLimsiacoImg} alt="Quote from Marissa Limsiaco" /></blockquote>
