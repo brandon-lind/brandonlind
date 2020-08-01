@@ -23,7 +23,7 @@ class Footer extends React.Component {
             </li>
           </ul>
           <ul className="copyright">
-            <li>&copy; 2019 Brandon Lind</li>
+            <li>&copy; 2020 Brandon Lind</li>
             <li>
               Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a>
             </li>

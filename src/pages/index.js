@@ -138,7 +138,7 @@ class HomeIndex extends React.Component {
               for my style of leadership. If this aligns with someone { ' ' }
               you're looking to work with, { ' ' }
               <a href="#contactme" className="smooth-scroll">get in touch with me</a> { ' ' }
-              and let's have a coffee or beer.
+              and let's have a coffee or a beer.
             </p>
             <ul className="icons">
               <li><a href="https://www.linkedin.com/in/brandon-lind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-linkedin" title="Connect with me on LinkedIn"><span className="label">LinkedIn</span></a></li>
