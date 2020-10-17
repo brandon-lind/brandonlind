@@ -143,7 +143,7 @@ class HomeIndex extends React.Component {
             <ul className="icons">
               <li><a href="https://www.linkedin.com/in/brandon-lind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-linkedin" title="Connect with me on LinkedIn"><span className="label">LinkedIn</span></a></li>
               <li><a href="#contactme" className="icon style2 fa-envelope-o smooth-scroll" title="Contact me"><span className="label">Contact me</span></a></li>
-              <li><a href="https://github.com/ripvanbl/brandonlind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-github" title="View my Github account"><span className="label">Github</span></a></li>
+              <li><a href="https://github.com/brandon-lind" target="_blank" rel="noopener noreferrer" className="icon style2 fa-github" title="View my Github account"><span className="label">Github</span></a></li>
               <li><a href="https://s3.amazonaws.com/brandonlind.com/resume/Brandon+Lind+Resume.pdf" target="_blank" rel="noopener noreferrer" className="icon style2 fa-file-pdf-o" title="View my resume in PDF format"><span className="label">View my resume in PDF format</span></a></li>
             </ul>
             <hr />
