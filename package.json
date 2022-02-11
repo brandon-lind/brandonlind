@@ -13,7 +13,7 @@
     "gatsby-plugin-offline": "^4.6.0",
     "gatsby-plugin-react-helmet": "^4.6.0",
     "gatsby-plugin-sass": "^4.6.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
