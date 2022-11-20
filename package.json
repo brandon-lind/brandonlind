@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.1.0",
   "description": "The personal site for Brandon Lind.",
+  "scripts": {
+    "build": "mkdir -p public && cp -R src/* public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brandon-lind/brandonlind.git"
