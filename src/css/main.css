@@ -174,20 +174,30 @@ h2 {
   text-transform: uppercase;
 }
 
+input, textarea {
+  color: #666;
+  display: block;
+  font-size: 1rem;
+  margin: 1rem 2rem;
+  padding: 0.5rem;
+  width: 24rem;
+}
+
+label {
+  color: #666;
+  display: block;
+}
+
 header {
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
-  padding: 2rem 2rem 6rem;
+  padding: 2rem 1rem 6rem;
   width: 64rem;
 }
 
 main {
   background-color: rgba(204, 204, 204, 0.8);
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
   width: 64rem;
 }
 
@@ -196,37 +206,34 @@ main a {
 }
 
 nav {
-  margin: 2rem auto 0;
+  margin: 0 auto;
 }
 
-nav ul li {
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+nav li {
   color: #cc3333;
   cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
   list-style: none;
-  float: left;
-  font-size: 12rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
-nav ul li.active {
+nav li.active {
   color: #333;
-}
-
-nav ul li:before {
-  content: "·";
-  font-size: 12rem;
-  line-height: 12rem;
-  vertical-align: middle;
 }
 
 footer {
   background-color: rgba(204, 204, 204, 0.8);
   color: #333;
-  display: flex;
-  flex-direction: column;
   font-size: smaller;
   margin: 0 auto;
-  padding: 0.1rem 2rem;
+  padding: 0.1rem 1rem;
   text-align: center;
   width: 64rem;
 }
@@ -242,7 +249,7 @@ footer .consent {
   animation-timing-function: ease-in;
   background-color: #e9e9e9;
   bottom: 0.5rem;
-  box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 1rem 1rem 12rem 16rem rgba(0, 0, 0, 0.6);
   height: 6rem;
   left: 0.5rem;
   padding: 1rem;
@@ -255,13 +262,13 @@ footer .consent {
   padding: 1rem;
 }
 
-.professionalism {
+.professionalism, .family, .interests {
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-name: fadeInOpacity;
   animation-timing-function: ease-in;
   display: block;
-  height: 24rem;
+  height: 32rem;
 }
 
 .professionalism .layer-0 {
@@ -269,7 +276,7 @@ footer .consent {
   border: 0.1rem solid #cccccc;
   height: 24rem;
   padding: 2rem;
-  width: 32rem;
+  width: 36rem;
 }
 
 .professionalism .layer-1 {
@@ -281,7 +288,7 @@ footer .consent {
   border-bottom-right-radius: 0.5rem;
   box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
   height: 24rem;
-  margin: -26rem 0 0 32rem;
+  margin: -26rem 0 0 36rem;
   opacity: 1;
   width: 24rem;
 }
@@ -289,10 +296,9 @@ footer .consent {
 .professionalism .layer-2 {
   background-color: rgba(250, 250, 250, 0.8);
   box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
-  height: 16rem;
   margin: -20rem auto 0 2rem;
   padding: 1rem;
-  width: 32rem;
+  width: 36rem;
 }
 
 .professionalism .layer-2 button {
@@ -323,24 +329,9 @@ footer .consent {
   animation-timing-function: ease-in;
   background-color: rgba(250, 250, 250, 0.8);
   box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
-  height: 32rem;
   margin: -27rem auto 0 1rem;
   padding: 1rem;
-  width: 32rem;
-}
-
-.professionalism .contactform label {
-  color: #666;
-  display: block;
-}
-
-.professionalism .contactform input, textarea {
-  color: #666;
-  display: block;
-  font-size: 1rem;
-  margin: 1rem 2rem;
-  padding: 0.5rem;
-  width: 24rem;
+  width: 36rem;
 }
 
 .professionalism .contactform .recaptcha {
@@ -353,11 +344,8 @@ footer .consent {
 }
 
 .family {
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-name: fadeInOpacity;
-  animation-timing-function: ease-in;
-  height: 22rem;
+  display: none;
+  height: 30rem;
   margin-top: 2rem;
 }
 
@@ -386,18 +374,13 @@ footer .consent {
 .family .layer-2 {
   background-color: rgba(250, 250, 250, 0.8);
   box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
-  height: 24rem;
   margin: -28rem auto 0 31rem;
   padding: 1rem 1rem 1rem 2rem;
   width: 24rem;
 }
 
 .interests {
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-name: fadeInOpacity;
-  animation-timing-function: ease-in;
-  height: 24rem;
+  display: none;
 }
 
 .interests .layer-0 {
@@ -424,7 +407,6 @@ footer .consent {
 .interests .layer-2 {
   background-color: rgba(250, 250, 250, 0.8);
   box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
-  height: 16rem;
   margin: -20rem auto 0 2rem;
   padding: 1rem;
   width: 30rem;
@@ -517,9 +499,314 @@ footer .consent {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen
+  and (min-width: 1px)
+  and (max-width: 768px) {
+  button, button.secondary {
+    display: block;
+    font-size: small;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 96%;
+  }
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+  h1 {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  h1:after, h1:before {
+    width: 0;
+  }
+
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  input, textarea {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+  header, main, footer {
+    height: auto;
+    padding: 1rem 0.1rem;
+    width: 96%;
+  }
+
+  footer .consent {
+    height: auto;
+    width: 90%;
+  }
+
+  nav,
+  .professionalism .layer-0,
+  .professionalism .layer-1,
+  .family .layer-0,
+  .family .layer-1,
+  .interests .layer-0,
+  .interests .layer-1 {
+    display: none;
+  }
+
+  .professionalism, .family, .interests, .privacy {
+    display: block;
+    height: auto;
+    margin: 0 auto 1rem;
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+  .professionalism .layer-2, .professionalism .contactform, .family .layer-2, .interests .layer-2 {
+    height: auto;
+    margin: 0;
+    padding: 1rem 0.5rem;
+    width: 96%;
+  }
+
+  .professionalism .contactform .actions button {
+    display: block;
+    margin: 1rem auto;
+    width: 96%;
+  }
+}
+
+@media only screen
+  and (min-width: 769px)
+  and (max-width: 977px) {
+  button, button.secondary {
+    display: block;
+    font-size: small;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 96%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  h1:after, h1:before {
+    width: 6rem;
+  }
+
+  h3, h4 {
+    font-size: larger !important;
+  }
+
+  input, textarea {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+  header, main, footer {
+    width: 96%;
+  }
+
+  footer .consent {
+    bottom: 1rem;
+    left: 3%;
+    height: auto;
+    width: 90%;
+    z-index: 10;
+  }
+
+  footer .consent button {
+    display: inline;
+    width: 10rem;
+  }
+
+  .privacy {
+    padding: 1rem;
+  }
+
+  .professionalism, .family, .interests {
+    height: 36rem;
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+  }
+
+  .professionalism .layer-0 {
+    height: 18rem;
+    margin: 2rem 0 0 -2rem;
+    padding: 0;
+    width: 32rem;
+  }
+
+  .professionalism .layer-1 {
+    border-radius: 0;
+    position:relative;
+    height: 14rem;
+    margin: -20rem 0 0 28rem;
+    width: 14rem;
+    z-index: 2;
+  }
+
+  .professionalism .layer-2 {
+    position:relative;
+    margin: -6rem 0 0 0;
+    height: auto;
+    width: 38rem;
+    z-index: 1;
+  }
+
+  .professionalism .contactform {
+    position:relative;
+    margin: -10rem 0 0 0;
+    height: auto;
+    width: 38rem;
+    z-index: 3;
+  }
+
+  .professionalism .contactform .actions button {
+    display: block;
+    margin: 1rem auto;
+    width: 96%;
+  }
+
+  .family .layer-0 {
+    margin-left: 2rem;
+  }
+
+  .family .layer-1 {
+    height: 16rem;
+    margin-left: -2rem;
+    margin-top: -26rem;
+    width: 24rem;
+  }
+
+  .family .layer-2 {
+    height: auto;
+    margin-left: 16rem;
+    margin-top: -2rem;
+  }
+
+  .interests .layer-0 {
+    margin-left: -2rem;
+  }
+
+  .interests .layer-1 {
+    border-radius: 0;
+    height: 16rem;
+    margin-left: 12rem;
+    margin-top: -12rem;
+    width: 32rem;
+  }
+
+  .interests .layer-2 {
+    margin-left: -1rem;
+    margin-top: -30rem;
+    width: 24rem;
+  }
+}
+
+@media only screen
+  and (min-width: 978px)
+  and (max-width: 1056px) {
+  button, button.secondary {
+    display: block;
+    font-size: small;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 96%;
+  }
+
+  h1 {
+    width: 100%;
+  }
+
+  h1:after, h1:before {
+    width: 6rem;
+  }
+
+  h3, h4 {
+    font-size: larger !important;
+  }
+
+  input, textarea {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+  header, main, footer {
+    width: 96%;
+  }
+
+  footer .consent {
+    bottom: 1rem;
+    left: 3%;
+    height: auto;
+    width: 90%;
+  }
+
+  footer .consent button {
+    display: inline;
+    width: 10rem;
+  }
+
+  .privacy {
+    padding: 1rem;
+  }
+
+  .professionalism, .family, .interests {
+    height: 32rem;
+    margin: 0 auto 1rem;
+    padding: 0.5rem;
+    width: 90%;
+  }
+
+  .professionalism .layer-1 {
+    height: 24rem;
+    margin-left: 32rem;
+    width: 24rem;
+  }
+
+  .professionalism .layer-2 {
+    height: auto;
+    width: 32rem;
+  }
+
+  .professionalism .contactform .actions button {
+    display: block;
+    margin: 1rem auto;
+    width: 96%;
+  }
+
+  .family .layer-0 {
+    margin-left: 4rem;
+  }
+
+  .family .layer-1 {
+    margin-left: -2rem;
+  }
+
+  .family .layer-2 {
+    height: auto;
+    margin-left: 29rem;
+    margin-top: -25rem;
+  }
+
+  .interests .layer-0 {
+    margin-left: -2rem;
+  }
+
+  .interests .layer-1 {
+    margin-left: 24rem;
+  }
+
+  .interests .layer-2 {
+    margin-left: 0;
+    width: 24rem;
+  }
 }
 
 @media print,

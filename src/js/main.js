@@ -70,13 +70,13 @@
    * @param {*} targetEl The clicked navigation list item.
    */
   function setActiveNav(targetEl) {
-    const navItems = document.querySelectorAll('nav li');
+    const navItems = document.querySelectorAll('nav i');
 
     navItems.forEach(el => {
-      el.classList.remove('active');
+      el.parentElement.classList.remove('active');
     });
 
-    targetEl.classList.add('active');
+    targetEl.parentElement.classList.add('active');
   }
 
   /**
@@ -87,17 +87,17 @@
     const sectionItems = document.querySelectorAll('main section');
 
     sectionItems.forEach(el => {
-      el.classList.add('hidden');
+      el.style.display = 'none';
     });
 
-    document.querySelector(`main section.${viewName}`).classList.remove('hidden');
+    document.querySelector(`main section.${viewName}`).style.display = 'block';
   }
 
   /**
    * Sets up any click handlers on things like buttons.
    */
   function setClickEvents() {
-    const navItems = document.querySelectorAll('nav li');
+    const navItems = document.querySelectorAll('nav i');
 
     // Set the click handler on the navigation list items
     navItems.forEach(item => {
