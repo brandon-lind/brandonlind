@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "description": "The personal site for Brandon Lind.",
   "scripts": {
-    "build": "cp -R src/* public"
+    "build": "mkdir public && cp -R src/* public"
   },
   "repository": {
     "type": "git",
