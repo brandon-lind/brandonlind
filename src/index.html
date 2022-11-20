@@ -11,7 +11,7 @@
   <meta property="og:description" content="A personal site for Brandon Lind.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.brandonlind.com">
-    <meta property="og:image" content="https://www.brandonlind.com/icon.png">
+  <meta property="og:image" content="https://www.brandonlind.com/icon.png">
 
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -25,6 +25,26 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script src="https://kit.fontawesome.com/84b59df9bb.js" crossorigin="anonymous"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script>
+    // Define dataLayer and the gtag function.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+
+    // Default storage to 'denied'
+    gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9D3P5H3X0"></script>
+  <script>
+    // Don't bother popping if local
+    if (!window.location.hostname.startsWith('localhost') && !window.location.hostname.startsWith('127.0.0.1')) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9D3P5H3X0');
+    }
+  </script>
 </head>
 
 <body>
@@ -41,31 +61,25 @@
           <li>
             <a
               href="https://www.linkedin.com/in/brandon-lind"
-              target="_blank"
-              rel="noopener noreferrer"
               title="Connect with me on LinkedIn"><i class="fa-brands fa-linkedin fa-xl"></i></a>
           </li>
           <li>
             <a
               href="https://github.com/brandon-lind"
-              target="_blank"
-              rel="noopener noreferrer"
               title="View my Github account"><i class="fa-brands fa-github fa-xl"></i></a>
           </li>
           <li>
             <a href="https://s3.amazonaws.com/brandonlind.com/resume/Brandon+Lind+Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
               title="View my resume in PDF format"><i class="fa-regular fa-file-pdf fa-xl"></i></a>
           </li>
         </ul>
         <h2>Professionalism</h2>
         <p>
-          Sounding my own horn is completely out of character for me, so I prefer to let my colleagues, clients, and
-          mentors
-          do the talking. I instinctively fall into the practice of confident humility for my style of leadership. If
-          this
-          aligns with someone you're looking to work with, get in touch with me and let's have a coffee or a beer.
+          Sounding my own horn is completely out of character for me, so I prefer to let my
+          <a href="https://www.linkedin.com/in/brandon-lind/#recommendations" title="View my recommendations on LinkedIn">
+          colleagues, clients, and mentors do the talking</a>. I instinctively fall into the
+          practice of confident humility for my style of leadership. If this style aligns with
+          the way you like to work, get in touch with me, and let's chat over a coffee or a beer.
         </p>
         <button>Contact Me</button>
       </div>
@@ -127,6 +141,16 @@
   </main>
 
   <footer>
+    <section class="consent hidden">
+      <p>
+        I use analytics to understand site traffic.
+        <a href="privacy.html">View the Privacy Policy</a>.
+      </p>
+      <div class="actions">
+        <button value="decline" class="secondary">Decline</button>
+        <button value="accept">Accept</button>
+      </div>
+    </section>
     <section class="copyright">&copy; Brandon Lind</section>
     <section class="attribution">
       <p>
@@ -136,6 +160,11 @@
           href="https://pixabay.com/users/onpointmediasolutions-3330210/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1678397">Dave
           Reid</a> from <a
           href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1678397">Pixabay</a>
+      </p>
+    </section>
+    <section class="links">
+      <p>
+        <a href="privacy.html">Privacy Policy</a>
       </p>
     </section>
   </footer>

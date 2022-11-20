@@ -1,0 +1,3 @@
+# https://docs.netlify.com/routing/redirects/redirect-options/
+
+/contact /index.html?view=contact 200

@@ -191,6 +191,10 @@ main {
   width: 64rem;
 }
 
+main a {
+  color: #666;
+}
+
 nav {
   margin: 2rem auto 0;
 }
@@ -229,6 +233,26 @@ footer {
 
 footer a {
   color: #222;
+}
+
+footer .consent {
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in;
+  background-color: #e9e9e9;
+  bottom: 0.5rem;
+  box-shadow: 1rem 1rem 4rem 0 rgba(0, 0, 0, 0.6);
+  height: 6rem;
+  left: 0.5rem;
+  padding: 1rem;
+  position: fixed;
+  width: 24rem;
+}
+
+.privacy {
+  background-color: #fafafa;
+  padding: 1rem;
 }
 
 .professionalism {
@@ -324,7 +348,7 @@ footer a {
 }
 
 .professionalism .contactform .actions button {
-  margin: 1rem 0 0 2rem;
+  margin: 1rem -1rem 0 2rem;
   width: 10rem;
 }
 

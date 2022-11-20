@@ -1,21 +1,33 @@
 (function() {
-  // Find the navigation list items and sections once.
-  const navItems = document.querySelectorAll('nav li');
-  const sectionItems = document.querySelectorAll('main section');
 
-  // Set the click handler on the navigation list items
-  navItems.forEach(item => {
-    item.addEventListener('click', handleNavigationClickEvt);
-  });
+  handleUrlNavigation();
+  setClickEvents();
+  setCopyright();
+  setConsentVisibility();
 
-  // Set the click handler to show the contact form
-  document.querySelector('.professionalism .layer-2 button').addEventListener('click', handleToggleContactForm);
+  /**
+   * Handles updating the concent for analytics storage.
+   */
+  function handleConsentAccept() {
+    if (!gtag) return;
 
-  // Set the click handler to hide the contact form
-  document.querySelector('.professionalism .contactform button[type="button"]').addEventListener('click', handleToggleContactForm);
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
 
-  // Set the copyright
-  document.querySelector('footer section.copyright').innerHTML = `&copy; ${new Date().getFullYear() } Brandon Lind`;
+    sessionStorage.setItem('analytics_storage', 'granted');
+
+    document.querySelector('footer .consent').classList.add('hidden');
+  }
+
+  /**
+   * Handles the decline of concent for analytics storage.
+   */
+  function handleConsentDecline() {
+    gtag('consent', 'update', { 'analytics_storage': 'denied' });
+
+    sessionStorage.setItem('analytics_storage', 'denied');
+
+    document.querySelector('footer .consent').classList.add('hidden');
+  }
 
   /**
    * Sets the active navigation list item and shows the associated view.
@@ -27,9 +39,30 @@
     setActiveSection(evt.target.dataset.view);
   }
 
+  /**
+   * Handles showing or hiding the contact form.
+   */
   function handleToggleContactForm() {
     document.querySelector('.professionalism .layer-2').classList.toggle('hidden');
     document.querySelector('.professionalism .contactform').classList.toggle('hidden');
+  }
+
+  /**
+   * Handles any showing/hiding of a specific view requested view the querystring.
+   * @param {*} queryView The view query parameter value.
+   */
+  function handleUrlNavigation() {
+    // Get the query parameters
+    const queryParams = new URLSearchParams(location.search);
+
+    if (!queryParams) return;
+
+    const viewName = queryParams.get('view');
+
+    // Handle any view switching
+    if (viewName && viewName.startsWith('contact')) {
+      handleToggleContactForm();
+    }
   }
 
   /**
@@ -37,6 +70,8 @@
    * @param {*} targetEl The clicked navigation list item.
    */
   function setActiveNav(targetEl) {
+    const navItems = document.querySelectorAll('nav li');
+
     navItems.forEach(el => {
       el.classList.remove('active');
     });
@@ -49,10 +84,52 @@
    * @param {*} viewName The class name of the section to display.
    */
   function setActiveSection(viewName) {
+    const sectionItems = document.querySelectorAll('main section');
+
     sectionItems.forEach(el => {
       el.classList.add('hidden');
     });
 
     document.querySelector(`main section.${viewName}`).classList.remove('hidden');
+  }
+
+  /**
+   * Sets up any click handlers on things like buttons.
+   */
+  function setClickEvents() {
+    const navItems = document.querySelectorAll('nav li');
+
+    // Set the click handler on the navigation list items
+    navItems.forEach(item => {
+      item.addEventListener('click', handleNavigationClickEvt);
+    });
+
+    // Set the click handler to show the contact form
+    document.querySelector('.professionalism .layer-2 button').addEventListener('click', handleToggleContactForm);
+
+    // Set the click handler to hide the contact form
+    document.querySelector('.professionalism .contactform button[type="button"]').addEventListener('click', handleToggleContactForm);
+
+    // Set the click handler to accept the analytics consent
+    document.querySelector('footer .consent button[value="accept"]').addEventListener('click', handleConsentAccept);
+    document.querySelector('footer .consent button[value="decline"]').addEventListener('click', handleConsentDecline);
+  }
+
+  /**
+   * Sets the copyright text, including the current year.
+   */
+  function setCopyright() {
+    const copyrightTxt = `&copy; ${new Date().getFullYear() } Brandon Lind`;
+
+    document.querySelector('footer section.copyright').innerHTML = copyrightTxt;
+  }
+
+  /**
+   * Sets the consent dialog visibility
+   */
+  function setConsentVisibility() {
+    if (!sessionStorage.getItem('analytics_storage')) {
+      document.querySelector('footer .consent').classList.remove('hidden');
+    }
   }
 }());
