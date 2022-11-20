@@ -319,6 +319,10 @@ footer a {
   width: 24rem;
 }
 
+.professionalism .contactform .recaptcha {
+  margin-left: 2rem;
+}
+
 .professionalism .contactform .actions button {
   margin: 1rem 0 0 2rem;
   width: 10rem;
